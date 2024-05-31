@@ -1,0 +1,168 @@
+// Find the maximum element in an array:
+
+// using for Anonymous Array
+/* public class ArrayBaseQuestion {
+
+    static void sum(int[]arr) {
+        int max = arr[0];
+        for (int element : arr) {
+            if (max < element) {
+                max = element;
+
+            }
+        }
+        System.out.println(max);
+    }
+      public static void main(String[]args){
+
+          sum(new int[]{10,20,30,40,50,60});
+
+      }
+}
+
+ */
+
+    //Calculate the sum of elements in an array:
+    // using Anonymous Array
+  /*  public class ArrayBaseQuestion {
+
+        static void calSum(int[]arr){
+            int sum=0;
+             for(int element : arr){
+                 sum += element;
+             }
+            System.out.println(sum);
+        }
+        public static void main(String[] args) {
+            calSum(new int[]{10,20,30,40,50,60});
+
+        }
+    }
+
+   */
+
+/*
+import java.util.Scanner;
+
+//Search for an element in an array:
+       public class ArrayBaseQuestion {
+
+        static void findelement(int[]arr) {
+            Scanner sc=new Scanner(System.in);
+            System.out.println("Enter array element");
+            int num = sc.nextInt();
+            boolean flag = false;
+            for (int a : arr) {
+                if (num == a) {
+                    flag = true;
+                    break;
+                }
+
+            }
+            if (flag) {
+                System.out.println(" yes element present in an array");
+
+            } else {
+                System.out.println(" array not present in array");
+
+            }
+        }
+
+           public static void main(String[] args) {
+               findelement(new int[]{10,20,30,40,50,60});
+           }
+       }
+
+ */
+
+/*
+             // 2nd method
+public class ArrayBaseQuestion {
+
+    public static boolean containsElement(int[] arr, int target) {
+        for (int num : arr) {
+            if (num == target) {
+                return true; // Element found
+            }
+        }
+        return false; // Element not found
+    }
+
+    public static void main(String[] args) {
+        int[] array = {10, 20, 30, 40, 50};
+        int target = 30;
+
+        if (containsElement(array, target)) {
+            System.out.println("Array contains the element " + target);
+        } else {
+            System.out.println("Array does not contain the element " + target);
+        }
+    }
+}
+ */
+
+
+      /* // Reverse an Array: Write a program to reverse the elements of an array
+
+        public class ArrayBaseQuestion {
+
+            public static void reverseArray(int[]arr){
+               int start=0;
+               int end=arr.length-1;
+
+               while(start < end){
+                   // Swap elements at start and end indices
+                   int temp=arr[start];
+                   arr[start]=arr[end];
+                   arr[end]=temp;
+                   start++;
+                   end--;
+               }
+               for(int element: arr){
+                   System.out.print(element +" ");
+               }
+            }
+
+            public static void main(String[] args) {
+                reverseArray(new int[]{10,20,30,40,50,60});
+
+                //  you can use this method
+//                int[] array = {10, 20, 30, 40, 50, 60};
+//                reverseArray(array);
+//                // Print the reversed array
+//                for (int num : array) {
+//                    System.out.print(num + " ");
+//                }
+
+            }
+        }
+
+       */
+
+             //Find the Average of Array Elements
+
+        public class ArrayBaseQuestion {
+            public static double findAverage(int[] arr) {
+                int sum = 0;
+                for (int element : arr) {
+                    sum += element;
+                }
+                double result = (double) sum / arr.length; // Cast one operand to double for correct division
+                return result;
+            }
+                     // you can try this code
+//                public static void print() {
+//                    double average = findAverage(new int[]{10, 20, 30, 40, 50, 50, 60, 70, 80});
+//                    System.out.println("Average of the array elements: " + average);
+//                }
+
+
+            public static void main(String[] args) {
+                double average = findAverage(new int[]{10, 20, 30, 40, 50, 50, 60, 70, 80});
+                System.out.println("Average of the array elements: " + average);
+
+ //               print();  // call static method
+            }
+        }
+
+
