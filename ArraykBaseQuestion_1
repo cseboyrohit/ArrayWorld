@@ -165,4 +165,83 @@ public class ArrayBaseQuestion {
             }
         }
 
+ // lecture `10` video solve question love 
+/*
+       public class ArrayBaseQuestion {
+          public static void swapAlternate(int[]arr){
+             for(int i=0; i<arr.length-1; i +=2){   // increase by 2 because operation after 2 element
+                 int temp= arr[i];
+                 arr[i]=arr[i+1];
+                 arr[i+1]=temp;
+             }
+
+             for(int element : arr){
+                 System.out.print(element+" ");
+             }
+         }
+
+         public static void main(String[] args) {
+          swapAlternate(new int[]{1,2,3,4,5,6});
+
+            }
+         }
+
+ */
+
+     /* how to find the single value in an array that appears an odd number of times,
+         denoted as (2m + 1) where m is an integer.*/
+/*
+          public class ArrayBaseQuestion {
+
+              public static int findSingle(int[]arr){
+                  int sum=0;
+                  for(int element : arr){
+                      sum = sum ^ element;  // using bitwise XOR operation.
+                  }
+
+                  return sum;
+              }
+
+              public static void main(String[] args) {
+                 //int result= findSingle(new int[]{4, 3, 2, 4, 1, 3, 2, 1, 4});
+                  int result= findSingle(new int[]{4, 3, 2, 4, 1, 3, 2, 1, 8});
+
+                  System.out.println("The single value with odd occurrence is: "+result);
+
+              }
+          }
+
+ */
+
+
+/*
+     // print the Duplicates vales leecode probleam
+import java.util.Arrays;
+
+public class ArrayBaseQuestion {
+    public static void findDuplicates(int[] nums) {
+           Arrays.sort(nums);
+        boolean flag=false;
+        for(int i=1; i<nums.length; i++){
+            if(nums[i] == nums[i-1]){  // start from index 1
+                if(!flag){
+                    System.out.println("Duplicate values:");
+                    flag=true;
+                }
+                System.out.println(nums[i]);
+            }
+        }
+        if(!flag) {
+            System.out.println("not Duplicate values:");
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 2, 5, 6, 3};
+          findDuplicates(arr);
+    }
+}
+
+ */
+
 
