@@ -1,0 +1,137 @@
+import java.util.Arrays;
+
+public class MergeSortExample {
+
+    public static void main(String[] args) {
+        int[] arr = {12, 11, 13, 5, 6, 7};
+        
+        System.out.println("Original array: " + Arrays.toString(arr));
+        
+        mergeSort(arr, 0, arr.length - 1);
+        
+        System.out.println("Sorted array: " + Arrays.toString(arr));
+    }
+
+    public static void mergeSort(int[] arr, int left, int right) {
+        if (left < right) {
+            // Find the middle point
+            int middle = (left + right) / 2;
+            
+            // Sort first and second halves
+            mergeSort(arr, left, middle);
+            mergeSort(arr, middle + 1, right);
+            
+            // Merge the sorted halves
+            merge(arr, left, middle, right);
+        }
+    }
+
+    public static void merge(int[] arr, int left, int middle, int right) {
+        // Sizes of the two subarrays to be merged
+        int n1 = middle - left + 1;
+        int n2 = right - middle;
+        
+        // Create temporary arrays
+        int[] L = new int[n1];
+        int[] R = new int[n2];
+        
+        // Copy data to temporary arrays
+        for (int i = 0; i < n1; ++i)
+            L[i] = arr[left + i];
+        for (int j = 0; j < n2; ++j)
+            R[j] = arr[middle + 1 + j];
+        
+        // Merge the temporary arrays
+        int i = 0, j = 0;
+        
+        // Initial index of merged subarray
+        int k = left;
+        
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                arr[k] = L[i];
+                i++;
+            } else {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+        
+        // Copy remaining elements of L[] if any
+        while (i < n1) {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+        
+        // Copy remaining elements of R[] if any
+        while (j < n2) {
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+}
+
+----------------------------------------------------------------------------------
+
+public class ArrayBaseQuestion {
+    static void displayArray(int[] arr) {
+        for (int val : arr) {
+            System.out.print(val + " ");
+        }
+        System.out.println();
+    }
+
+    static void merge(int[] arr, int l, int mid, int r) {
+        int n1 = mid - l + 1;
+        int n2 = r - mid;
+
+        // Create two Arrays
+        int[] left = new int[n1];
+        int[] right = new int[n2];
+
+        for (int i = 0; i < n1; i++)
+            left[i] = arr[l + i];
+        for (int j = 0; j < n2; j++)
+            right[j] = arr[mid + 1 + j];
+
+        int i = 0, j = 0;
+        int k = l; // Initialize k to the starting index
+
+        while (i < n1 && j < n2) {
+            if (left[i] < right[j]) {
+                arr[k++] = left[i++];
+            } else {
+                arr[k++] = right[j++];
+            }
+        }
+
+        while (i < n1) {
+            arr[k++] = left[i++];
+        }
+        while (j < n2) {
+            arr[k++] = right[j++];
+        }
+    }
+
+    static void mergeSort(int[] arr, int l, int r) {
+        if (l < r) {
+            int mid = (l + r) / 2;
+            mergeSort(arr, l, mid);
+            mergeSort(arr, mid + 1, r);
+            merge(arr, l, mid, r);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {4, 1, 3, 5, 2};
+        int n = arr.length;
+        System.out.println("Array before sorting:");
+        displayArray(arr);  // 4 1 3 5 2
+        mergeSort(arr, 0, n - 1);
+        System.out.println("Array after sorting:");
+        displayArray(arr); // 1 2 3 4 5
+    }
+}
