@@ -63,6 +63,21 @@ public class explainArray {
            boolean isEqual = Arrays.equals(array1, array2);
 
          */
+        /*
+          System.arraycopy() method copies an array from the specified source
+
+         public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
+
+         int[] srcArray = {1, 2, 3, 4, 5};
+         int[] destArray = new int[5];
+         System.arraycopy(srcArray, 0, destArray, 0, 5);
+
+
+   *  src: The source array from which elements will be copied.
+   *  srcPos: The starting position in the source array from which to start copying.
+   *  dest: The destination array where elements will be copied.
+*  *  destPos: The starting position in the destination array where elements will be copied.
+*  *  length: The number of elements to be copied.
 
     }
 }
