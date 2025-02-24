@@ -9,8 +9,6 @@ public class explainArray {
 //          System.out.println(name.charAt(i));
 //      }
 
-            // String Working
-
 //        char data[] = {'a', 'b', 'c'};
 //        String str = new String(data);
 //        System.out.println(str);  // abc
