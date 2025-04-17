@@ -1,7 +1,7 @@
 public class ArrayPractic {
     public static void main(String[] args) {
 
-        // Array declaration
+        // Array declaration...
       /*  int []arr1;
         int arr2[];
         int[] arr; // preferred
