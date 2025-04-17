@@ -6,7 +6,7 @@
     static void sum(int[]arr) {
         int max = arr[0];
         for (int element : arr) {
-            if (max < element) {
+            if (max < element) {//
                 max = element;
 
             }
